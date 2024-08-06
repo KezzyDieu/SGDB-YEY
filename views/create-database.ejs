@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear base de datos</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+   <div class="container">
+    <h1>Crear base de datos</h1>
+    <form action="/database/create" method="post">
+        <label for="dbName">Nombre de la base de datos:</label>
+        <input type="text" id="dbName" name="dbName" required>
+        <button type="submit">Crear</button>
+    </form>
+    <a href="/">Volver a la pagina principal</a>
+   </div>
+
+    <script src="/js/createbd.js"></script>
+</body>
+</html>

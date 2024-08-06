@@ -1,0 +1,154 @@
+/* Reset básico para eliminar márgenes y paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el body */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #e0f7fa; /* Fondo azul claro */
+    color: #004d40; /* Color de texto verde oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilos para el encabezado */
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #00796b; /* Color del encabezado verde */
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    display: block;
+    color: #004d40; /* Color de las etiquetas */
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #80cbc4; /* Borde verde claro */
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #00796b; /* Borde verde oscuro en foco */
+    outline: none;
+}
+
+button {
+    background-color: #00796b; /* Fondo del botón verde oscuro */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #004d40; /* Fondo del botón al pasar el ratón */
+}
+
+a {
+    text-decoration: none;
+    color: #00796b; /* Color de los enlaces */
+    display: block;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para los campos adicionales */
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    margin-bottom: 4px;
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field select {
+    margin-bottom: 10px;
+}
+
+#addFieldBtn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos adicionales */
+.field {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 23%; /* Ajusta el ancho para que quepan cuatro elementos en la misma línea */
+}
+
+.field-group label {
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: #004d40; /* Color de las etiquetas */
+}
+
+.field-group input[type="text"],
+.field-group input[type="number"],
+.field-group select {
+    padding: 12px;
+    border: 1px solid #80cbc4; /* Borde verde claro */
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.field-group input[type="checkbox"] {
+    margin-top: 10px;
+}

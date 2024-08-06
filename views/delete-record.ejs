@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrar registro</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Borrar registro</h1>
+    <form action="/delete-record/delete" method="post" id="deleteForm">
+      <label for="dbName">Base de datos fuente:</label>
+      <input type="text" id="dbName" name="dbName" placeholder="Enter database name" required>
+
+      <label for="tableName">Nombre de la tabla:</label>
+      <input type="text" id="tableName" name="tableName" placeholder="Enter table name" required>
+
+      <div id="conditionFields">
+        <div class="condition">
+          <label for="fieldName">Nombre del campo:</label>
+          <input type="text" name="fieldNames[]" placeholder="Enter field name" required>
+
+          <label for="fieldValue">Valor del campo:</label>
+          <input type="text" name="fieldValues[]" placeholder="Enter value for the field" required>
+        </div>
+      </div>
+
+      <button type="button" id="addCondition">Añadir condicion</button>
+<br>
+      <button type="submit">Borrar registro</button>
+    </form>
+    <a href="/">Volver a la pagina principal</a>
+
+    <script>
+      document.getElementById('addCondition').addEventListener('click', () => {
+        const container = document.createElement('div');
+        container.classList.add('condition');
+
+        const fieldLabel = document.createElement('label');
+        fieldLabel.textContent = 'Field Name:';
+        container.appendChild(fieldLabel);
+
+        const fieldInput = document.createElement('input');
+        fieldInput.type = 'text';
+        fieldInput.name = 'fieldNames[]';
+        fieldInput.placeholder = 'Enter field name';
+        container.appendChild(fieldInput);
+
+        const valueLabel = document.createElement('label');
+        valueLabel.textContent = 'Field Value:';
+        container.appendChild(valueLabel);
+
+        const valueInput = document.createElement('input');
+        valueInput.type = 'text';
+        valueInput.name = 'fieldValues[]';
+        valueInput.placeholder = 'Enter value for the field';
+        container.appendChild(valueInput);
+
+        document.getElementById('conditionFields').appendChild(container);
+      });
+    </script>
+  </div>
+</body>
+</html>

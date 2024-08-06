@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrar base de datos</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Borrar base de datos</h1>
+
+    <form action="/delete-database/delete" method="POST">
+        <label for="dbName">Nombre de la bd:</label>
+        <input type="text" id="dbName" name="dbName" required>
+        <button type="submit">Borrar bd</button>
+    </form>
+
+    <a href="/">Volver a la pagina principal</a>
+    </div>
+</body>
+</html>

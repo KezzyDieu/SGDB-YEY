@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de bases de datos</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gestión de bases de datos</h1>
+
+    <% if (message) { %>
+        <div class="alert">
+            <%= message %>
+        </div>
+    <% } %>
+
+
+    <nav>
+      <ul>
+        <li><a href="/database/create">Crear base de datos</a></li>
+        <li><a href="/delete-database/delete">Borrar base de datos</a></li>
+        <li><a href="/tables/create">Crear Tabla</a></li>
+        <li><a href="/table-Routes/modify">Modificar Tabla</a></li>
+        <li><a href="/table-Routes/delete">Borrar Tabla</a></li>
+        <li><a href="/insert-record/insert">Insertar registro</a></li>
+        <li><a href="/delete-record/delete">Borrar registro</a></li>
+        <li><a href="/update-record/update">Actualizar registro</a></li>
+        <li><a href="/show-records/show">Mostrar registro</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script src="/js/index.js"></script>
+</body>
+</html>

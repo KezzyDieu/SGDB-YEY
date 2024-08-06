@@ -1,0 +1,158 @@
+/* Reset básico para eliminar márgenes y paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* Estilos para el body */
+body {
+    font-family: Arial, sans-serif;
+    background: #e0f7fa; /* Fondo azul claro */
+    color: #004d40; /* Color de texto verde oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  
+/* Estilos para el contenedor principal */
+.container {
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    width: 50%;
+    text-align: center;
+}
+
+/* Elementos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #004d40; /* Color de las etiquetas */
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #80cbc4; /* Borde verde claro */
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #00796b; /* Fondo del botón verde oscuro */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004d40; /* Fondo del botón al pasar el ratón */
+}
+
+a {
+    text-decoration: none;
+    color: #00796b; /* Color de los enlaces */
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el contenedor de registros */
+#records-container {
+    margin: 20px auto;
+    max-width: 90%;
+    overflow-x: auto; /* Permite desplazamiento horizontal si la tabla es demasiado ancha */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #00796b; /* Fondo del encabezado de la tabla verde oscuro */
+    color: #ffffff;
+}
+
+thead th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody td:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #e1e1e1;
+}
+
+p {
+    text-align: center;
+    color: #555;
+    font-size: 1em;
+    padding: 15px;
+}
+
+.error {
+    color: #FF5733; /* Color rojo-naranja para errores */
+    font-weight: bold;
+}
+
+.no-records {
+    color: #00796b; /* Color azul para el mensaje de "No hay registros" */
+    font-weight: bold;
+}
+
+.alert {
+    background: #00796b; /* Fondo verde oscuro para alertas */
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+  
+/* Transición suave para alertas */
+.alert {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.alert.fade-out {
+    opacity: 0;
+}

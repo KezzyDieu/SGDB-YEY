@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar cambios de las tablas</title>
+    <link rel="stylesheet" href="/css/modifytable.css">
+</head>
+<body>
+    <div class="container">
+      <h1>Modificar cambios de las tablas</h1>
+
+    <form id="modifyForm" action="/table-Routes/modify" method="POST">
+        <div>
+            <label for="dbName">Base de datos fuente: </label>
+            <input type="text" id="dbName" name="dbName" required>
+        </div>
+        <div>
+            <label for="tableName">Nombre de la tabla:</label>
+            <input type="text" id="tableName" name="tableName" required>
+        </div>
+        <div>
+            <label for="action">Accion:</label>
+            <select id="action" name="action" onchange="showFormFields(this.value)" required>
+                <option value="">Selecciona una accion</option>
+                <option value="modify">Modificar campo</option>
+                <option value="delete">Borrar campo</option>
+            </select>
+        </div>
+
+        <!-- Formulario para modificar campo -->
+        <div id="modifyFields" style="display:none;">
+            <div>
+                <label for="oldFieldName">Nombre actual del campo:</label>
+                <input type="text" id="oldFieldName" name="oldFieldName">
+            </div>
+            <div>
+                <label for="newFieldName">Nuevo nombre del campo:</label>
+                <input type="text" id="newFieldName" name="newFieldName">
+            </div>
+            <div>
+                <label for="fieldType">Tipo de dato:</label>
+                <select id="fieldType" name="fieldType">
+                    <option value="INT">INT</option>
+                    <option value="VARCHAR(255)">VARCHAR(255)</option>
+                    <option value="TEXT">TEXT</option>
+                    <!-- Agrega más tipos de datos si es necesario -->
+                </select>
+            </div>
+            <div>
+                <label for="isPrimary">Esta es una primary key? (click si es asi)</label>
+                <input type="checkbox" id="isPrimary" name="isPrimary" value="1">
+            </div>
+        </div>
+
+        <!-- Formulario para eliminar campo -->
+        <div id="deleteFields" style="display:none;">
+            <div>
+                <label for="fieldNameToDelete">Nombre del campo a ser borrado:</label>
+                <input type="text" id="fieldNameToDelete" name="fieldNameToDelete">
+            </div>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <a href="/">Volver a la pagina principal</a>
+
+    <script>
+        function showFormFields(action) {
+            document.getElementById('modifyFields').style.display = action === 'modify' ? 'block' : 'none';
+            document.getElementById('deleteFields').style.display = action === 'delete' ? 'block' : 'none';
+        }
+    </script>
+    </div>
+</body>
+</html>

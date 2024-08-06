@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrar tabla</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Delete Table</h1>
+  <form action="/table-Routes/delete" method="post">
+    <label for="dbName">Base de datos fuente:</label>
+    <input type="text" id="dbName" name="dbName" required>
+
+    <label for="tableName">Nombre de la tabla:</label>
+    <input type="text" id="tableName" name="tableName" required>
+
+    <button type="submit">Borrar</button>
+  </form>
+
+  <a href="/">Volver a la pagina principal</a>
+  </div>
+</body>
+</html>

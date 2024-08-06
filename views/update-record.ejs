@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Actualizar registro</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+    function addField() {
+      const container = document.getElementById('fieldsContainer');
+      const fieldDiv = document.createElement('div');
+
+      const fieldNameInput = document.createElement('input');
+      fieldNameInput.setAttribute('type', 'text');
+      fieldNameInput.setAttribute('name', 'fields[]');
+      fieldNameInput.setAttribute('placeholder', 'Nombre del campo');
+      fieldNameInput.setAttribute('required', true);
+
+      const fieldValueInput = document.createElement('input');
+      fieldValueInput.setAttribute('type', 'text');
+      fieldValueInput.setAttribute('name', 'values[]');
+      fieldValueInput.setAttribute('placeholder', 'Nuevo valor');
+      fieldValueInput.setAttribute('required', true);
+
+      const removeButton = document.createElement('button');
+      removeButton.setAttribute('type', 'button');
+      removeButton.innerText = 'Eliminar';
+      removeButton.onclick = () => container.removeChild(fieldDiv);
+
+      fieldDiv.appendChild(fieldNameInput);
+      fieldDiv.appendChild(fieldValueInput);
+      fieldDiv.appendChild(removeButton);
+
+      container.appendChild(fieldDiv);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Volver a la pagina principal</h1>
+    <form action="/update-record/update" method="post">
+      <label for="dbName">Base de datos fuente:</label>
+      <input type="text" id="dbName" name="dbName" placeholder="Set source database" required>
+
+      <label for="tableName">Nombre de la tabla:</label>
+      <input type="text" id="tableName" name="tableName" placeholder="Set table name" required>
+
+      <div id="fieldsContainer">
+        <div>
+          <input type="text" name="fields[]" placeholder="Field name" required>
+          <input type="text" name="values[]" placeholder="New value" required>
+        </div>
+      </div>
+
+      <button type="button" onclick="addField()">Añadir campo</button>
+
+      <label for="recordId">ID del registro:</label>
+      <input type="text" id="recordId" name="recordId" placeholder="Set source ID" required>
+
+      <button type="submit">Actualizar registros</button>
+    </form>
+    <a href="/">Volver a la pagina principal</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insertar registro</title>
+  <link rel="stylesheet" href="/css/style.css">
+ 
+</head>
+<body>
+  <div class="container">
+    <h1>Insertar registro</h1>
+    <form action="/insert-record/insert" method="post">
+      <label for="dbName">Base de datos fuente:</label>
+      <input type="text" id="dbName" name="dbName" placeholder="Enter database name" required>
+
+      <label for="tableName">Nombre de la tabla:</label>
+      <input type="text" id="tableName" name="tableName" placeholder="Enter table name" required>
+
+      <div id="fieldsContainer">
+        <div>
+          <label for="columns0">Columna 1:</label>
+          <input type="text" id="columns0" name="columns[]" placeholder="Column name" required>
+          <label for="values0">Valor 1:</label>
+          <input type="text" id="values0" name="values[]" placeholder="Value" required>
+          <br>
+        </div>
+      </div>
+
+      <button type="button" onclick="addRow()">Añadir mas campos</button>
+      <br>
+      <button type="submit">Insertar registro</button>
+    </form>
+    <a href="/">Volver a la pagina principal</a>
+  </div>
+
+  <script>
+    function addRow() {
+      const container = document.getElementById('fieldsContainer');
+      const index = container.children.length;
+
+      const fieldDiv = document.createElement('div');
+      fieldDiv.innerHTML = `
+        <label for="columns${index}">Column ${index + 1}:</label>
+        <input type="text" id="columns${index}" name="columns[]" placeholder="Column name" required>
+        <label for="values${index}">Value ${index + 1}:</label>
+        <input type="text" id="values${index}" name="values[]" placeholder="Value" required>
+        <br>
+      `;
+      container.appendChild(fieldDiv);
+    }
+  </script>
+</body>
+</html>

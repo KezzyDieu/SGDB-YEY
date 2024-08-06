@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mostrar registros</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Mostrar registros</h1>
+    <form id="showRecordsForm">
+      <label for="dbName">Base de datos fuente:</label>
+      <input type="text" id="dbName" name="dbName" placeholder="Source Database" required>
+
+      <label for="tableName">Nombre de la tabla:</label>
+      <input type="text" id="tableName" name="tableName" placeholder="Set table name" required>
+
+      <button type="submit">Mostrar registros</button>
+    </form>
+    <div id="records-container">
+      <!-- Los registros se mostrarán aquí después de enviar el formulario -->
+    </div>
+    <a href="/">Volver a la pagina principal</a>
+  </div>
+
+  <script src="/js/showRecords.js"></script>
+</body>
+</html>
